@@ -1,0 +1,212 @@
+{
+	"info": {
+		"_postman_id": "a2351dad-bd0a-4e6a-ba70-d68c116d2121",
+		"name": "IA - Forecast API",
+		"description": "\n# Energy Forecasting API\n\n# Cross-Origin Resource Sharing\nThis API features Cross-Origin Resource Sharing (CORS) implemented in\ncompliance with  [W3C spec](https://www.w3.org/TR/cors/).\n\nAnd that allows cross-domain communication from the browser.\n\nAll responses have a wildcard same-origin which makes them completely public\nand accessible to everyone, including any code on any site.\n\n\n# Authentication\n\n\n\n\n<SecurityDefinitions />\n\nContact Support:\n Name: API Team\n Email: apiteam@integralanalytics.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "STF",
+			"item": [
+				{
+					"name": "Generates a new forecast for the given node",
+					"id": "60744481-f92c-4ee1-9e49-d76421a5c177",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/STF/GetForecast?ModelId=83738149&NodeId=laborum amet non aute adipisicing",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"STF",
+								"GetForecast"
+							],
+							"query": [
+								{
+									"key": "ModelId",
+									"value": "83738149"
+								},
+								{
+									"key": "NodeId",
+									"value": "laborum amet non aute adipisicing"
+								}
+							]
+						},
+						"description": "Generates a new forecast for the given **node**"
+					},
+					"response": [
+						{
+							"id": "8bb2d976-9c1d-49b0-97da-552f2cc8b7eb",
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/STF/GetForecast?ModelId=83738149&NodeId=laborum amet non aute adipisicing",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"STF",
+										"GetForecast"
+									],
+									"query": [
+										{
+											"key": "ModelId",
+											"value": "83738149"
+										},
+										{
+											"key": "NodeId",
+											"value": "laborum amet non aute adipisicing"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Report historical load for the given node",
+					"id": "5cd9894b-232a-47ec-a4b1-9b602a40cdd5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/STF/GetHistoricalLoad?NodeId=laborum amet non aute adipisicing&StartDate=1948-11-22T12:11:46.488Z&EndDate=1948-11-22T12:11:46.488Z",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"STF",
+								"GetHistoricalLoad"
+							],
+							"query": [
+								{
+									"key": "NodeId",
+									"value": "laborum amet non aute adipisicing"
+								},
+								{
+									"key": "StartDate",
+									"value": "1948-11-22T12:11:46.488Z"
+								},
+								{
+									"key": "EndDate",
+									"value": "1948-11-22T12:11:46.488Z"
+								}
+							]
+						},
+						"description": "Report historical load for the given node"
+					},
+					"response": [
+						{
+							"id": "e5803858-b976-4c46-9e5b-c7e7645271b0",
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/STF/GetHistoricalLoad?NodeId=laborum amet non aute adipisicing&StartDate=1948-11-22T12:11:46.488Z&EndDate=1948-11-22T12:11:46.488Z",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"STF",
+										"GetHistoricalLoad"
+									],
+									"query": [
+										{
+											"key": "NodeId",
+											"value": "laborum amet non aute adipisicing"
+										},
+										{
+											"key": "StartDate",
+											"value": "1948-11-22T12:11:46.488Z"
+										},
+										{
+											"key": "EndDate",
+											"value": "1948-11-22T12:11:46.488Z"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": ""
+						}
+					]
+				}
+			],
+			"id": "0aba4d85-085b-48ad-b6c3-5a257d8acebc"
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "Authorization",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "<API Key>",
+				"type": "string"
+			},
+			{
+				"key": "in",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"variable": [
+		{
+			"id": "9885c2a3-88a8-4eaa-8c11-98277e2e907e",
+			"key": "baseUrl",
+			"value": "https://stf-prototype-survalent-demo.minervalabs.org/api",
+			"type": "string"
+		}
+	]
+}

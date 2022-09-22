@@ -1,0 +1,146 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "IA - Forecast API",
+    "description": "\n# Energy Forecasting API\n\n# Cross-Origin Resource Sharing\nThis API features Cross-Origin Resource Sharing (CORS) implemented in\ncompliance with  [W3C spec](https://www.w3.org/TR/cors/).\n\nAnd that allows cross-domain communication from the browser.\n\nAll responses have a wildcard same-origin which makes them completely public\nand accessible to everyone, including any code on any site.\n\n\n# Authentication\n\n\n\n\n<SecurityDefinitions />",
+    "termsOfService": "http://docs.integralanalytics.io/terms/",
+    "contact": {
+      "name": "API Team",
+      "url": "https://plugin-ui",
+      "email": "apiteam@integralanalytics.com"
+    },
+    "license": {
+      "name": "Use under LICX",
+      "url": "https://plugin-ui/license"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://stf-prototype-survalent-demo.minervalabs.org/api"
+    }
+  ],
+  "paths": {
+    "/STF/GetForecast": {
+      "get": {
+        "tags": [
+          "forecasts"
+        ],
+        "summary": "Generates a new forecast for the given node",
+        "description": "Generates a new forecast for the given **node**",
+        "operationId": "GetForecast",
+        "parameters": [
+          {
+            "name": "ModelId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "NodeId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/STF/GetHistoricalLoad": {
+      "get": {
+        "tags": [
+          "forecasts"
+        ],
+        "summary": "Report historical load for the given node",
+        "description": "Report historical load for the given node",
+        "operationId": "GetHistoricalLoad",
+        "parameters": [
+          {
+            "name": "NodeId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "StartDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "EndDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "JWT Authorization header using the Bearer scheme.\n                                Enter 'Bearer' [space] and then your token in the text input below. Example: 'Bearer 12345abcdef'",
+        "name": "Authorization",
+        "in": "header"
+      },
+      "OAuth2-https://frontegg.alpha.minervalabs.org": {
+        "type": "oauth2",
+        "description": "Authorization code flow https://frontegg.alpha.minervalabs.org.",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "https://plugin-short-term-beta.alpha.minervalabs.org/api/oauth2/token",
+            "scopes": {
+              "openid": "User Profile"
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+
+    {
+      "name": "forecasts",
+      "description": "Forecasts",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "http://swagger.io"
+      }
+    },
+    {
+      "name": "historical",
+      "description": "Historical Data",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "http://swagger.io"
+      }
+    }
+  ],
+  "security": [
+    {
+      "Bearer": [ ],
+      "OAuth2-https://frontegg.alpha.minervalabs.org": [
+        "openid"
+      ]
+    }
+  ]
+}
