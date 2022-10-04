@@ -18,6 +18,9 @@
   "servers": [
     {
       "url": "https://stf-prototype-survalent-demo.minervalabs.org/api"
+    },
+    {
+      "url": "https://stf-prototype-survalent-alpha.minervalabs.org/api"
     }
   ],
   "paths": {
