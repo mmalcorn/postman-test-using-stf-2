@@ -1,0 +1,17 @@
+id = 534bd062-aef0-44fd-8f5a-c933758aea29
+
+[relations]
+
+[relations.collections]
+rootDirectory = postman/collections
+files[] = {"id":"23509960-4e175693-607a-4ff0-b822-e2503a2a02c6","path":"New Collection.json","metaData":{}}
+
+[relations.collections.metaData]
+
+[relations.apiDefinition]
+rootDirectory = postman/schemas
+files[] = {"path":"swagger.json","metaData":{}}
+
+[relations.apiDefinition.metaData]
+type = openapi:3
+rootFiles[] = swagger.json
